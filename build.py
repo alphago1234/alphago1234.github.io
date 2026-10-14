@@ -75,6 +75,11 @@ def page(file, title, body, description):
 <main id="main">{body}<footer class="footer"><span>© 2026 Anirban Pal · Updated {PROFILE['updated']}</span>
 <a class="back-top" href="#top">Back to top ↑</a></footer></main></div></body></html>
 '''
+    if file == '404.html':
+        # GitHub can serve the 404 page at nested addresses; use root-relative resources.
+        html = html.replace('href="assets/', 'href="/assets/').replace('src="assets/', 'src="/assets/')
+        for path, _ in NAV:
+            html = html.replace(f'href="{path}"', f'href="/{path}"')
     (ROOT / file).write_text(html)
 
 
