@@ -1,0 +1,151 @@
+[
+  {
+    "title": "Reconstruction-Based Selection Can Hurt Retrieval Compatibility",
+    "authors": [
+      "Atharva Airen",
+      "Anirban Pal"
+    ],
+    "status": "Submitted to TMLR",
+    "year": 2026,
+    "posted_date": "2026-10-10",
+    "id": "retrieval-compatibility",
+    "category": "submission",
+    "record_url": "https://openreview.net/profile?id=~Anirban_Pal2",
+    "record_label": "Author profile",
+    "verification": "Author-supplied OpenReview publication-list screenshot, reviewed 2026-10-12; live profile requires browser verification"
+  },
+  {
+    "title": "Test-Time Feature Alignment Under Uncertain Correspondence",
+    "authors": [
+      "Atharva Airen",
+      "Anirban Pal"
+    ],
+    "status": "ICLR 2027 Conference Submission",
+    "posted_date": "2026-09-19",
+    "modified_date": "2026-10-06",
+    "url": "https://openreview.net/forum?id=mLXTamMOQ9",
+    "link_source": "https://acceptodds.com/papers/iclr2027-55317",
+    "id": "uncertain-correspondence",
+    "year": 2026,
+    "category": "submission",
+    "record_url": "https://openreview.net/forum?id=mLXTamMOQ9",
+    "record_label": "OpenReview",
+    "verification": "Author-supplied OpenReview publication-list screenshot, reviewed 2026-10-12; live profile requires browser verification"
+  },
+  {
+    "title": "Beyond Marginals: What Test-Time Feature Alignment Can and Cannot Recover",
+    "authors": [
+      "Atharva Airen",
+      "Anirban Pal"
+    ],
+    "status": "NewInML workshop @ NeurIPS 2026 Poster",
+    "posted_date": "2026-09-29",
+    "id": "beyond-marginals",
+    "year": 2026,
+    "category": "accepted",
+    "record_url": "https://openreview.net/profile?id=~Anirban_Pal2",
+    "record_label": "Author profile",
+    "verification": "Author-supplied OpenReview publication-list screenshot, reviewed 2026-10-12; live profile requires browser verification"
+  },
+  {
+    "title": "Deconstructing Gradient Reuse: A Prospective Target-Permutation Diagnostic for Online Learning",
+    "authors": [
+      "Atharva Airen",
+      "Anirban Pal"
+    ],
+    "status": "NewInML workshop @ NeurIPS 2026 Poster",
+    "posted_date": "2026-09-29",
+    "id": "gradient-reuse",
+    "year": 2026,
+    "category": "accepted",
+    "record_url": "https://openreview.net/profile?id=~Anirban_Pal2",
+    "record_label": "Author profile",
+    "verification": "Author-supplied OpenReview publication-list screenshot, reviewed 2026-10-12; live profile requires browser verification"
+  },
+  {
+    "title": "The Interface Contract: Understanding Representation Drift in Continual Representation Learning",
+    "authors": [
+      "Atharva Airen",
+      "Anirban Pal"
+    ],
+    "status": "Submitted to NewInML workshop @ NeurIPS 2026",
+    "posted_date": "2026-08-28",
+    "modified_date": "2026-09-29",
+    "id": "interface-contract",
+    "year": 2026,
+    "category": "submission",
+    "record_url": "https://openreview.net/profile?id=~Anirban_Pal2",
+    "record_label": "Author profile",
+    "verification": "Author-supplied OpenReview publication-list screenshot, reviewed 2026-10-12; live profile requires browser verification"
+  },
+  {
+    "title": "The Interface Contract: Repairable Geometry and Partially Predictable Drift in Continual Representation Learning",
+    "authors": [
+      "Atharva Airen",
+      "Anirban Pal"
+    ],
+    "status": "NeurIPS 2026 Workshop NeurIPS Extended Abstracts",
+    "posted_date": "2026-09-30",
+    "id": "repairable-geometry",
+    "year": 2026,
+    "category": "accepted",
+    "record_url": "https://openreview.net/profile?id=~Anirban_Pal2",
+    "record_label": "Author profile",
+    "verification": "Author-supplied OpenReview publication-list screenshot, reviewed 2026-10-12; live profile requires browser verification"
+  },
+  {
+    "title": "Pixel Reconstruction Keeps an Absolute-Coordinate Channel that Latent Prediction Lets Go",
+    "authors": [
+      "Aarav Gupta",
+      "Anirban Pal"
+    ],
+    "status": "CAISc 2026",
+    "posted_date": "2026-07-31",
+    "modified_date": "2026-08-05",
+    "url": "https://openreview.net/forum?id=PMjBo6Ii83",
+    "acceptance_source": "https://caisc2026.github.io/accepted_papers.html",
+    "id": "pixel-reconstruction",
+    "year": 2026,
+    "category": "accepted",
+    "record_url": "https://openreview.net/forum?id=PMjBo6Ii83",
+    "record_label": "OpenReview",
+    "verification": "Public CAISc accepted-paper list, checked 2026-10-14"
+  },
+  {
+    "title": "Action-Conditioned Sparsity for Latent-Space Planning",
+    "authors": [
+      "Aarav Gupta",
+      "Anirban Pal"
+    ],
+    "status": "CAISc 2026",
+    "posted_date": "2026-07-31",
+    "modified_date": "2026-08-05",
+    "url": "https://openreview.net/forum?id=ieS8kpFAuG",
+    "acceptance_source": "https://caisc2026.github.io/accepted_papers.html",
+    "id": "latent-planning",
+    "year": 2026,
+    "category": "accepted",
+    "record_url": "https://openreview.net/forum?id=ieS8kpFAuG",
+    "record_label": "OpenReview",
+    "verification": "Public CAISc accepted-paper list, checked 2026-10-14"
+  },
+  {
+    "id": "vector-plus",
+    "title": "Valid Property-Enhanced Contrastive Learning for Targeted Optimization & Resampling for Novel Drug Design",
+    "authors": [
+      "Amartya Banerjee",
+      "Somnath Kar",
+      "Anirban Pal",
+      "Debabrata Maiti"
+    ],
+    "status": "arXiv preprint",
+    "year": 2025,
+    "posted_date": "2025-08-31",
+    "category": "preprint",
+    "record_url": "https://arxiv.org/abs/2509.00684",
+    "record_label": "Paper",
+    "pdf_url": "https://arxiv.org/pdf/2509.00684",
+    "code_url": "https://github.com/amartya21/vector-drug-design",
+    "verification": "arXiv author/title/date record, checked 2026-10-14"
+  }
+]
