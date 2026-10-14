@@ -272,5 +272,21 @@
     ],
     "pages": "7936-7945",
     "pdf_url": "https://pubs.rsc.org/en/content/articlepdf/2025/sc/d4sc07897g"
+  },
+  {
+    "id": "target-assignment-replay",
+    "title": "How Target Assignment Shapes Experience Replay",
+    "authors": [
+      "Atharva Airen",
+      "Anirban Pal"
+    ],
+    "status": "Submitted to TMLR",
+    "category": "submission",
+    "year": 2026,
+    "posted_date": "2026-10-14",
+    "date_note": "Submitted: 14 October 2026",
+    "record_url": "https://openreview.net/profile?id=~Anirban_Pal2",
+    "record_label": "Author profile",
+    "verification": "Author-provided OpenReview publication-list screenshot showing title, ordered authors, 14 Oct 2026 date, and Submitted to TMLR status. No acceptance or paper-specific URL inferred."
   }
 ]

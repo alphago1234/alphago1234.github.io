@@ -34,6 +34,9 @@ Other OpenReview entries: Anirban's supplied publication-list screenshot, review
 These entries preserve the supplied statuses; no journal or main-conference
 acceptance is inferred. Unknown paper-specific links use the author profile,
 explicitly labelled as such. Do not describe those links as direct paper links.
+"How Target Assignment Shapes Experience Replay": added from Anirban's new
+OpenReview screenshot, with authors Atharva Airen and Anirban Pal, date
+14 October 2026, and status "Submitted to TMLR". It is not an accepted paper.
 
 Public code: published author VECTOR+ implementation and Anirban's public
 Cross-Electrophile-Coupling repository. Private drafts and experiment files are

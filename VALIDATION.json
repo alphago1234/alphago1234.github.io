@@ -1,9 +1,9 @@
 {
   "status": "passed",
   "pages": 6,
-  "publication_records": 11,
+  "publication_records": 12,
   "local_links_and_anchors_checked": 91,
-  "external_links_syntax_checked": 75,
+  "external_links_syntax_checked": 76,
   "checks": [
     "all page targets/assets and internal anchors exist",
     "one h1 and main per page",
@@ -21,6 +21,6 @@
     "404.html": "1f40ef28455251f7ecc149f5115c09ec31650601b2db25482c0035b2531f5819",
     "contact.html": "abfc738bf8503232d51a0cb02c8097630fbe3109d2e8b7c8caec584a607d76a0",
     "code.html": "032ff881e8faecad04ab3ca15e3834256e5ed0f64f86f260b39952cd5505637b",
-    "publications.html": "e3b77fdcd1c8a4066a4173c51f1fdb9813a58ed45b3c4990c086ce51eaf5af90"
+    "publications.html": "ff5fa6dc102837f0272130058cc628420baa17873fac431c13464874862fe984"
   }
 }

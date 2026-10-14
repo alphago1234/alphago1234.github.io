@@ -57,7 +57,7 @@ for name, doc in pages.items():
         local_links += 1
 
 papers = json.loads((ROOT / 'data/publications.json').read_text())
-assert len(papers) == 11
+assert len(papers) == 12
 assert set(pages['publications.html'].publications) == {p['id'] for p in papers}
 assert all('Anirban Pal' in p['authors'] for p in papers)
 assert all(p['category'] == 'submission' for p in papers if 'Submitted' in p['status'] or 'Submission' in p['status'])
