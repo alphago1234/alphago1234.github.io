@@ -57,11 +57,15 @@ for name, doc in pages.items():
         local_links += 1
 
 papers = json.loads((ROOT / 'data/publications.json').read_text())
-assert len(papers) == 9
+assert len(papers) == 11
 assert set(pages['publications.html'].publications) == {p['id'] for p in papers}
 assert all('Anirban Pal' in p['authors'] for p in papers)
 assert all(p['category'] == 'submission' for p in papers if 'Submitted' in p['status'] or 'Submission' in p['status'])
-assert (ROOT / 'publications.bib').read_text().count('@misc{') == len(papers)
+bib = (ROOT / 'publications.bib').read_text()
+assert bib.count('@misc{') + bib.count('@article{') == len(papers)
+assert bib.count('@article{') == len([p for p in papers if p['category'] == 'journal']) == 2
+assert len({p.get('doi') for p in papers if p.get('doi')}) == 2
+assert all(p.get('journal') and p.get('volume') and p.get('doi') for p in papers if p['category'] == 'journal')
 assert (ROOT / '.nojekyll').exists()
 assert (ROOT / 'assets/portrait.png').stat().st_size > 0
 for p in papers:

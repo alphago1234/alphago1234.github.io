@@ -147,5 +147,130 @@
     "pdf_url": "https://arxiv.org/pdf/2509.00684",
     "code_url": "https://github.com/amartya21/vector-drug-design",
     "verification": "arXiv author/title/date record, checked 2026-10-14"
+  },
+  {
+    "id": "pyridines-from-nitroarenes",
+    "title": "A General Strategy to Access Pharmaceutically Relevant Pyridines from Nitroarenes",
+    "authors": [
+      "Argha Saha",
+      "Avishek Pan",
+      "Devika Ghosh",
+      "Anirban Pal",
+      "Srimanta Guin",
+      "Archana Kumari Redhu",
+      "Vikram Gota",
+      "Debabrata Maiti"
+    ],
+    "author_metadata": [
+      {
+        "given": "Argha",
+        "family": "Saha"
+      },
+      {
+        "given": "Avishek",
+        "family": "Pan"
+      },
+      {
+        "given": "Devika",
+        "family": "Ghosh"
+      },
+      {
+        "given": "Anirban",
+        "family": "Pal"
+      },
+      {
+        "given": "Srimanta",
+        "family": "Guin"
+      },
+      {
+        "given": "Archana Kumari",
+        "family": "Redhu"
+      },
+      {
+        "given": "Vikram",
+        "family": "Gota"
+      },
+      {
+        "given": "Debabrata",
+        "family": "Maiti"
+      }
+    ],
+    "status": "Published journal article",
+    "category": "journal",
+    "journal": "Angewandte Chemie International Edition",
+    "year": 2026,
+    "volume": "65",
+    "issue": "6",
+    "doi": "10.1002/anie.202517867",
+    "posted_date": "2026-02-02",
+    "url": "https://doi.org/10.1002/anie.202517867",
+    "record_url": "https://doi.org/10.1002/anie.202517867",
+    "record_label": "Paper",
+    "verification": "ResearchGate profile matches author; full author order and bibliographic metadata verified against publisher-deposited Crossref record and publisher page/PDF on 2026-10-14",
+    "verification_sources": [
+      "https://www.researchgate.net/profile/Anirban-Pal-18",
+      "https://api.crossref.org/works/10.1002/anie.202517867",
+      "https://onlinelibrary.wiley.com/doi/10.1002/anie.202517867"
+    ],
+    "online_date": "2025-12-24",
+    "date_note": "First online: 24 December 2025; issue date: 2 February 2026",
+    "article_number": "e17867"
+  },
+  {
+    "id": "picolinamide-chalcogenation",
+    "title": "Generating the Pd-catalyzed δ C–H chalcogenation of aliphatic picolinamides: systematically decreasing the bias",
+    "authors": [
+      "Soumya Kumar Sinha",
+      "Aniket Gholap",
+      "Yazhinimuthu C M",
+      "Anirban Pal",
+      "Anant R. Kapdi",
+      "Debabrata Maiti"
+    ],
+    "author_metadata": [
+      {
+        "given": "Soumya Kumar",
+        "family": "Sinha"
+      },
+      {
+        "given": "Aniket",
+        "family": "Gholap"
+      },
+      {
+        "given": "Yazhinimuthu",
+        "family": "C M"
+      },
+      {
+        "given": "Anirban",
+        "family": "Pal"
+      },
+      {
+        "given": "Anant R.",
+        "family": "Kapdi"
+      },
+      {
+        "given": "Debabrata",
+        "family": "Maiti"
+      }
+    ],
+    "status": "Published journal article",
+    "category": "journal",
+    "journal": "Chemical Science",
+    "year": 2025,
+    "volume": "16",
+    "issue": "18",
+    "doi": "10.1039/d4sc07897g",
+    "posted_date": "2025-03-17",
+    "url": "https://doi.org/10.1039/d4sc07897g",
+    "record_url": "https://doi.org/10.1039/d4sc07897g",
+    "record_label": "Paper",
+    "verification": "ResearchGate profile matches author; full author order and bibliographic metadata verified against publisher-deposited Crossref record and publisher page/PDF on 2026-10-14",
+    "verification_sources": [
+      "https://www.researchgate.net/profile/Anirban-Pal-18",
+      "https://api.crossref.org/works/10.1039/d4sc07897g",
+      "https://pubs.rsc.org/en/content/articlepdf/2025/sc/d4sc07897g"
+    ],
+    "pages": "7936-7945",
+    "pdf_url": "https://pubs.rsc.org/en/content/articlepdf/2025/sc/d4sc07897g"
   }
 ]

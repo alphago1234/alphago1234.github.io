@@ -35,10 +35,15 @@ def paper(p, summary=None):
     if status == 'CAISc 2026':
         status = 'CAISc 2026 · accepted paper'
     description = f'<p class="abstract-line">{escape(summary)}</p>' if summary else ''
+    citation = str(p['year'])
+    if p.get('journal'):
+        locator = p.get('article_number') or p.get('pages', '').replace('-', '–')
+        citation = f"{p['journal']} · {p['year']}, {p['volume']}({p['issue']}), {locator}"
+    date_note = f'<p class="note">{escape(p["date_note"])}</p>' if p.get('date_note') else ''
     return f'''<article class="pub" id="{escape(p['id'])}" data-publication data-category="{category}">
       <h3>{title}</h3><p class="authors">{authors(p)}</p>
-      <div class="pub-meta"><span class="status {category}">{escape(status)}</span> {p['year']}</div>
-      {description}<div class="pub-links">{' '.join(links)}</div></article>'''
+      <div class="pub-meta"><span class="status {category}">{escape(status)}</span> {escape(citation)}</div>
+      {date_note}{description}<div class="pub-links">{' '.join(links)}</div></article>'''
 
 
 def related(ids):
@@ -51,7 +56,7 @@ def page(file, title, body, description):
     canonical = BASE + '/' + ('' if file == 'index.html' else file)
     schema = {'@context': 'https://schema.org', '@type': 'Person', 'name': PROFILE['name'],
               'url': BASE, 'jobTitle': PROFILE['role'], 'image': BASE + '/assets/portrait.png',
-              'sameAs': [PROFILE['github'], PROFILE['openreview'], PROFILE['linkedin']],
+              'sameAs': [PROFILE['github'], PROFILE['openreview'], PROFILE['linkedin'], PROFILE['researchgate']],
               'knowsAbout': ['Representation learning', 'Continual learning', 'Self-supervised learning',
                              'Machine learning for biology', 'Molecular design', 'Catalysis']}
     html = f'''<!doctype html>
@@ -95,7 +100,7 @@ home = '''<p class="eyebrow">Machine learning · Biology · Chemistry</p>
 <article class="theme"><span class="number">03</span><h3>Machine learning for science</h3><p>Biological and molecular learning for cancer research, drug discovery, and catalysis.</p></article>
 </div></section>
 <section class="section" aria-labelledby="selected"><div class="section-head"><h2 id="selected">Selected work</h2>''' + link('publications.html', 'All publications →') + '</div>'
-for id_ in ['repairable-geometry', 'pixel-reconstruction', 'latent-planning', 'vector-plus']:
+for id_ in ['repairable-geometry', 'pixel-reconstruction', 'latent-planning', 'vector-plus', 'pyridines-from-nitroarenes', 'picolinamide-chalcogenation']:
     home += paper(BY_ID[id_])
 home += '''</section><section class="section" aria-labelledby="news"><div class="section-head"><h2 id="news">Recent work</h2></div>
 <ul class="news"><li><time>2026</time><span>Two papers with Aarav Gupta on latent prediction and latent-space planning appear in the ''' + link('https://caisc2026.github.io/accepted_papers.html', 'CAISc accepted-paper list') + '''.</span></li>
@@ -117,14 +122,15 @@ research = '''<p class="eyebrow">Research</p><h1>Representations, adaptation,<br
 <h2 id="scientific-ml">Connecting molecular structure to useful decisions.</h2>
 <p>My scientific ML interests span biological representation learning for cancer research and molecular representation learning for drug discovery and catalysis. VECTOR+ combines property-guided contrastive learning, latent-space sampling, and molecular decoding to explore chemical space with limited target-specific data.</p>
 <p>In catalysis, my chemical ML work uses molecular descriptors, predictive models, and fragment recombination to prioritize phosphine-ligand candidates for cross-electrophile coupling.</p>
-<p class="question">How can molecular representations support candidate generation and prioritization when experimentally measured data are limited?</p>''' + related(['vector-plus']) + '<p class="related">' + link('code.html', 'Explore the molecular-design and catalysis code →') + '</p></section>'
+<p>My collaborative chemistry publications include methods for accessing pharmaceutically relevant pyridines from nitroarenes and for palladium-catalyzed distal C–H chalcogenation of aliphatic picolinamides.</p>
+<p class="question">How can molecular representations support candidate generation and prioritization when experimentally measured data are limited?</p>''' + related(['vector-plus', 'pyridines-from-nitroarenes', 'picolinamide-chalcogenation']) + '<p class="related">' + link('code.html', 'Explore the molecular-design and catalysis code →') + '</p></section>'
 page('research.html', 'Research', research, 'Research by Anirban Pal on representation drift, continual learning, latent prediction, JEPA-based world models, and machine learning for biology and molecular discovery.')
 
 pubs = '''<p class="eyebrow">Publications</p><h1>Papers &amp; research records.</h1>
-<p class="page-lead">Conference and workshop papers, preprints, and submissions. Submission status is listed explicitly.</p>
+<p class="page-lead">Journal articles, conference and workshop papers, preprints, and submissions. Submission status is listed explicitly.</p>
 <p class="note">''' + link(PROFILE['openreview'], 'OpenReview profile ↗') + ''' · ''' + link('publications.bib', 'Download BibTeX', download='publications.bib') + '''</p>
 <div class="tools"><div class="filters" role="group" aria-label="Filter publication status">
-<button type="button" data-filter="all" aria-pressed="true">All</button><button type="button" data-filter="accepted" aria-pressed="false">Conference / workshop</button>
+<button type="button" data-filter="all" aria-pressed="true">All</button><button type="button" data-filter="journal" aria-pressed="false">Journal articles</button><button type="button" data-filter="accepted" aria-pressed="false">Conference / workshop</button>
 <button type="button" data-filter="submission" aria-pressed="false">Submissions</button><button type="button" data-filter="preprint" aria-pressed="false">Preprints</button></div>
 <label class="note" for="publication-search">Search publications</label><input class="search" id="publication-search" type="search" placeholder="Title, author, or venue…" autocomplete="off">
 <span class="note" id="result-count" role="status" aria-live="polite"></span></div>
@@ -135,7 +141,7 @@ for year in sorted({p['year'] for p in PAPERS}, reverse=True):
         pubs += paper(p)
     pubs += '</section>'
 pubs += '<p class="note section">Where an individual paper link is unavailable, “Author profile” opens the corresponding author’s OpenReview publication list.</p>'
-page('publications.html', 'Publications', pubs, 'Publications, workshop papers, preprints, and submissions by Anirban Pal, with authors, publication status, and links to OpenReview, papers, and public code.')
+page('publications.html', 'Publications', pubs, 'Journal articles, conference and workshop papers, preprints, and submissions by Anirban Pal, with authors, publication status, DOI links, and public code.')
 
 code = '''<p class="eyebrow">Code &amp; projects</p><h1>Research you can explore.</h1>
 <p class="page-lead">Public implementations and project resources for molecular generation and chemical machine learning.</p>
@@ -155,7 +161,7 @@ contact = '''<p class="eyebrow">Contact</p><h1>Get in touch.</h1>
 <p>I’m a PhD researcher at IIT Bombay–Monash, based in Mumbai, India.</p>
 <dl class="contact-list">'''
 for label, url, text in [('Email', 'mailto:' + PROFILE['email'], PROFILE['email']), ('GitHub', PROFILE['github'], 'alphago1234'),
-                          ('OpenReview', PROFILE['openreview'], 'Anirban Pal'), ('LinkedIn', PROFILE['linkedin'], 'Anirban Pal')]:
+                          ('OpenReview', PROFILE['openreview'], 'Anirban Pal'), ('ResearchGate', PROFILE['researchgate'], 'Anirban Pal'), ('LinkedIn', PROFILE['linkedin'], 'Anirban Pal')]:
     contact += f'<div class="contact-row"><dt>{label}</dt><dd>{link(url, text)}</dd></div>'
 contact += '</dl>'
 page('contact.html', 'Contact', contact, 'Contact Anirban Pal, PhD researcher at IIT Bombay–Monash, for research discussions in machine learning, biology, drug discovery, and catalysis.')
@@ -163,9 +169,18 @@ page('contact.html', 'Contact', contact, 'Contact Anirban Pal, PhD researcher at
 # Only known metadata is included. No DOI, acceptance, or paper-specific URL is invented.
 bib = []
 for p in PAPERS:
-    author = ' and '.join(' '.join(a.split()[1:]) + ', ' + a.split()[0] for a in p['authors'])
-    title = p['title'].replace('&', r'\&')
-    bib.append(f"@misc{{pal_{p['id'].replace('-', '_')}_{p['year']},\n  title = {{{title}}},\n  author = {{{author}}},\n  year = {{{p['year']}}},\n  note = {{{p['status']}}},\n  url = {{{p['record_url']}}}\n}}")
+    author = (' and '.join(a['family'] + ', ' + a['given'] for a in p['author_metadata'])
+              if p.get('author_metadata') else ' and '.join(' '.join(a.split()[1:]) + ', ' + a.split()[0] for a in p['authors']))
+    title = p['title'].replace('&', r'\&').replace('δ', r'$\delta$').replace('–', '--')
+    kind = 'article' if p['category'] == 'journal' else 'misc'
+    fields = {'title': title, 'author': author, 'year': str(p['year']), 'note': p['status'], 'url': p['record_url']}
+    if kind == 'article':
+        fields.update(journal=p['journal'], volume=p['volume'], number=p['issue'], doi=p['doi'])
+        fields['pages'] = p.get('pages', p.get('article_number', '')).replace('-', '--')
+        if p.get('online_date'):
+            fields['note'] += '; ' + p['date_note']
+    bib.append('@' + kind + '{' + f"pal_{p['id'].replace('-', '_')}_{p['year']},\n" +
+               ',\n'.join('  ' + key + ' = {' + value + '}' for key, value in fields.items()) + '\n}')
 (ROOT / 'publications.bib').write_text('\n\n'.join(bib) + '\n')
 (ROOT / 'robots.txt').write_text('User-agent: *\nAllow: /\nSitemap: ' + BASE + '/sitemap.xml\n')
 urls = [BASE + '/' + ('' if file == 'index.html' else file) for file, _ in NAV]

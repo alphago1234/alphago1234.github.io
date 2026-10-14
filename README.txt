@@ -24,6 +24,11 @@ Bio and research interests: supplied and approved by Anirban Pal in this thread.
 Portrait/contact: existing public GitHub profile, accessed 14 October 2026.
 VECTOR+: arXiv:2509.00684 author, title, and preprint record, checked 14 October.
 CAISc entries: the conference's public accepted-paper list, checked 14 October.
+Journal articles: the two entries on Anirban's supplied ResearchGate profile,
+verified against RSC/Wiley publisher records and Crossref on 14 October.
+The pyridine paper uses its 2026 journal-issue year and also displays its first
+online date, 24 December 2025. Journal BibTeX entries use publisher-deposited
+author given/family names and include DOI, volume, issue, and page/article number.
 Other OpenReview entries: Anirban's supplied publication-list screenshot, reviewed
 12 October. Live OpenReview profile/API access was blocked by browser verification.
 These entries preserve the supplied statuses; no journal or main-conference
