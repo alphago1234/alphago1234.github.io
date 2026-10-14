@@ -2,7 +2,7 @@
   "status": "passed",
   "pages": 6,
   "publication_records": 12,
-  "local_links_and_anchors_checked": 91,
+  "local_links_and_anchors_checked": 92,
   "external_links_syntax_checked": 76,
   "checks": [
     "all page targets/assets and internal anchors exist",
@@ -16,11 +16,11 @@
   ],
   "limits": "No graphical-browser preview available in this session. External destinations checked separately where accessible; live OpenReview verification blocked.",
   "page_sha256": {
-    "research.html": "d306540e1fb0a77bbd9199d0b4b4a7da66b074acb46e795c67e2069ab022e89f",
-    "index.html": "da08fe3654b6723e479a7be39c87932b1c6e89b3873c1429d9d0053a1ac37972",
-    "404.html": "1f40ef28455251f7ecc149f5115c09ec31650601b2db25482c0035b2531f5819",
-    "contact.html": "abfc738bf8503232d51a0cb02c8097630fbe3109d2e8b7c8caec584a607d76a0",
-    "code.html": "032ff881e8faecad04ab3ca15e3834256e5ed0f64f86f260b39952cd5505637b",
-    "publications.html": "ff5fa6dc102837f0272130058cc628420baa17873fac431c13464874862fe984"
+    "research.html": "629347bbd9ea4cb411d9bc8f1d950213366aa9f7856492d18f66b4f76df36b83",
+    "index.html": "4b86f618f89dd5183298054ee58b5d9f28bed43ee3cc98677057c1e28cbf44c2",
+    "404.html": "c2376fee7ec8d9aa931844c81b047aaa4cb5e2654e32856fd0ef5285fe1ade1d",
+    "contact.html": "3c340769e8b6270a6ab3dc00de1c4c6fbbb806feb6dfb212d4712b032e0621ab",
+    "code.html": "c2a63ef3af7f360bd98c510bb73fcffa1a3e52b1d5e784ad86f5d2c5896d1d2a",
+    "publications.html": "1bb78bdce2cdcc617ff69bcbcce9b24c6f1c84d71f54053e2f8ce8d10d719050"
   }
 }

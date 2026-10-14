@@ -57,7 +57,7 @@ def page(file, title, body, description):
     schema = {'@context': 'https://schema.org', '@type': 'Person', 'name': PROFILE['name'],
               'url': BASE, 'jobTitle': PROFILE['role'], 'image': BASE + '/assets/portrait.png',
               'sameAs': [PROFILE['github'], PROFILE['openreview'], PROFILE['linkedin'], PROFILE['researchgate']],
-              'knowsAbout': ['Representation learning', 'Continual learning', 'Self-supervised learning',
+              'knowsAbout': ['Representation learning', 'Continual learning', 'Self-supervised learning', 'Foundation models',
                              'Machine learning for biology', 'Molecular design', 'Catalysis']}
     html = f'''<!doctype html>
 <html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
@@ -96,17 +96,21 @@ home = '''<p class="eyebrow">Machine learning · Biology · Chemistry</p>
 <section class="section" aria-labelledby="directions"><div class="section-head"><h2 id="directions">Research directions</h2></div>
 <div class="themes">
 <article class="theme"><span class="number">01</span><h3>Representations &amp; continual learning</h3><p>Representation drift, feature alignment, and knowledge retention as models and data change.</p></article>
-<article class="theme"><span class="number">02</span><h3>Self-supervision &amp; world models</h3><p>Latent prediction, reconstruction objectives, and representations for planning.</p></article>
-<article class="theme"><span class="number">03</span><h3>Machine learning for science</h3><p>Biological and molecular learning for cancer research, drug discovery, and catalysis.</p></article>
+<article class="theme"><span class="number">02</span><h3>Foundation models &amp; world models</h3><p>Self-supervised features, latent prediction, and adaptation of pretrained representations.</p></article>
+<article class="theme"><span class="number">03</span><h3>Biological and Molecular Representation Learning</h3><p>Learning from biological and chemical data for cancer research, drug discovery, and catalysis.</p></article>
 </div></section>
 <section class="section" aria-labelledby="selected"><div class="section-head"><h2 id="selected">Selected work</h2>''' + link('publications.html', 'All publications →') + '</div>'
+home += '''<article class="pub" id="foundation-model-work"><h3>Foundation-model representations</h3>
+<div class="pub-meta"><span class="status">Ongoing research</span></div>
+<p class="abstract-line">Studying what pretrained representations retain, how they change during adaptation, and how they transfer to downstream tasks. This work connects self-supervised learning and JEPA-based world models with continual learning and biological and molecular applications.</p>
+<div class="pub-links">''' + link('research.html#foundation-models', 'Research direction →') + '</div></article>'
 for id_ in ['repairable-geometry', 'pixel-reconstruction', 'latent-planning', 'vector-plus', 'pyridines-from-nitroarenes', 'picolinamide-chalcogenation']:
     home += paper(BY_ID[id_])
 home += '''</section><section class="section" aria-labelledby="news"><div class="section-head"><h2 id="news">Recent work</h2></div>
 <ul class="news"><li><time>2026</time><span>Two papers with Aarav Gupta on latent prediction and latent-space planning appear in the ''' + link('https://caisc2026.github.io/accepted_papers.html', 'CAISc accepted-paper list') + '''.</span></li>
 <li><time>2026</time><span>Work with Atharva Airen examines representation drift, test-time feature alignment, gradient reuse, and retrieval compatibility. ''' + link('publications.html', 'Publication records →') + '''</span></li>
 <li><time>2025</time><span>''' + link('https://arxiv.org/abs/2509.00684', 'VECTOR+') + ''' introduces property-guided contrastive learning and latent-space sampling for molecular design.</span></li></ul></section>'''
-page('index.html', 'Home', home, 'Anirban Pal, PhD researcher at IIT Bombay–Monash. Representation and continual learning, self-supervised world models, and machine learning for biology, drug discovery, and catalysis.')
+page('index.html', 'Home', home, 'Anirban Pal, PhD researcher at IIT Bombay–Monash. Representation and continual learning, foundation models, world models, and biological and molecular representation learning.')
 
 research = '''<p class="eyebrow">Research</p><h1>Representations, adaptation,<br>and scientific discovery.</h1>
 <p class="page-lead">I study what learned representations preserve, how they change, and whether that information remains useful for downstream tasks.</p>
@@ -114,17 +118,19 @@ research = '''<p class="eyebrow">Research</p><h1>Representations, adaptation,<br
 <h2 id="continual">When a model changes, what stays compatible?</h2>
 <p>My work with Atharva Airen examines representation drift in continual learning, feature alignment under uncertain correspondence, and compatibility in retrieval. These questions concern the relationship between a changing encoder and the systems that consume its features.</p>
 <p class="question">How can we distinguish a change in representation geometry from a loss of information needed by a downstream task?</p>''' + related(['repairable-geometry', 'interface-contract', 'uncertain-correspondence', 'beyond-marginals', 'retrieval-compatibility', 'gradient-reuse']) + '''</section>
-<section class="research-block" aria-labelledby="world-models"><p class="eyebrow">02 · Self-supervised learning &amp; world models</p>
+<section class="research-block" aria-labelledby="world-models"><p class="eyebrow">02 · Foundation models, self-supervision &amp; world models</p>
 <h2 id="world-models">Learning through prediction in latent space.</h2>
+<p id="foundation-models">My ongoing foundation-model research focuses on learned representations: the information they retain, their behavior during adaptation, and their usefulness under distribution shift. I am interested in connecting self-supervised pretraining with continual learning, so that adapting a model to a new task does not discard information needed by other tasks.</p>
 <p>I am interested in self-supervised learning and JEPA-based world models. My work with Aarav Gupta studies the distinction between pixel reconstruction and latent prediction, alongside action-conditioned sparsity for latent-space planning.</p>
 <p class="question">What does a training objective encourage a representation to retain, and which parts are useful for planning?</p>''' + related(['pixel-reconstruction', 'latent-planning']) + '''</section>
-<section class="research-block" aria-labelledby="scientific-ml"><p class="eyebrow">03 · Biology, drug discovery &amp; catalysis</p>
-<h2 id="scientific-ml">Connecting molecular structure to useful decisions.</h2>
-<p>My scientific ML interests span biological representation learning for cancer research and molecular representation learning for drug discovery and catalysis. VECTOR+ combines property-guided contrastive learning, latent-space sampling, and molecular decoding to explore chemical space with limited target-specific data.</p>
+<section class="research-block" aria-labelledby="scientific-ml"><p class="eyebrow">03 · Biology &amp; molecular design</p>
+<h2 id="scientific-ml">Biological and Molecular Representation Learning</h2>
+<p>I study how biological and molecular data can be represented to capture information relevant to disease, molecular properties, and chemical function. My interests include representations learned through self-supervision and pretrained foundation models, with applications in cancer research, drug discovery, and catalysis. A central question is how to adapt these representations when task-specific labels are scarce and assess their usefulness beyond the training data.</p>
+<p>In molecular design, VECTOR+ combines a pretrained ChemBERTa encoder with property-guided contrastive learning, latent-space sampling, and molecular decoding. This provides a setting for examining how representation choice and adaptation affect generation from limited target-specific data.</p>
 <p>In catalysis, my chemical ML work uses molecular descriptors, predictive models, and fragment recombination to prioritize phosphine-ligand candidates for cross-electrophile coupling.</p>
 <p>My collaborative chemistry publications include methods for accessing pharmaceutically relevant pyridines from nitroarenes and for palladium-catalyzed distal C–H chalcogenation of aliphatic picolinamides.</p>
-<p class="question">How can molecular representations support candidate generation and prioritization when experimentally measured data are limited?</p>''' + related(['vector-plus', 'pyridines-from-nitroarenes', 'picolinamide-chalcogenation']) + '<p class="related">' + link('code.html', 'Explore the molecular-design and catalysis code →') + '</p></section>'
-page('research.html', 'Research', research, 'Research by Anirban Pal on representation drift, continual learning, latent prediction, JEPA-based world models, and machine learning for biology and molecular discovery.')
+<p class="question">Which information in a learned representation remains useful for new molecules or biological conditions when labelled data are limited?</p>''' + related(['vector-plus', 'pyridines-from-nitroarenes', 'picolinamide-chalcogenation']) + '<p class="related">' + link('code.html', 'Explore the molecular-design and catalysis code →') + '</p></section>'
+page('research.html', 'Research', research, 'Research by Anirban Pal on foundation-model representations, continual learning, latent prediction, JEPA-based world models, and biological and molecular representation learning.')
 
 pubs = '''<p class="eyebrow">Publications</p><h1>Papers &amp; research records.</h1>
 <p class="page-lead">Journal articles, conference and workshop papers, preprints, and submissions. Submission status is listed explicitly.</p>

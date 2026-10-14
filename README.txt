@@ -21,6 +21,10 @@ processing. Keep the personal-site repository separate from research code.
 
 CONTENT PROVENANCE
 Bio and research interests: supplied and approved by Anirban Pal in this thread.
+The biological/molecular representation-learning heading and ongoing foundation-
+model direction follow Anirban's subsequent website-edit request. The foundation-
+model entry describes ongoing research, not a new publication, released model,
+or completed large-scale pretraining result.
 Portrait/contact: existing public GitHub profile, accessed 14 October 2026.
 VECTOR+: arXiv:2509.00684 author, title, and preprint record, checked 14 October.
 CAISc entries: the conference's public accepted-paper list, checked 14 October.
