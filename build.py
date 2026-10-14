@@ -72,7 +72,7 @@ def page(file, title, body, description):
 <aside class="sidebar" aria-label="Profile and site navigation">
   <img class="portrait" src="assets/portrait.png" alt="Anirban Pal" width="144" height="144">
   <a class="identity" href="index.html">Anirban Pal</a>
-  <p class="affiliation">PhD researcher<br>IIT Bombay–Monash<br>Mumbai, India</p>
+  <p class="affiliation">PhD researcher at<br>{escape(PROFILE['affiliation'])}<br>Mumbai, India</p>
   <nav class="nav" aria-label="Main navigation">{nav}</nav>
   <div class="socials">{link(PROFILE['github'], 'GitHub ↗')}{link(PROFILE['openreview'], 'OpenReview ↗')}{link('mailto:' + PROFILE['email'], 'Email ↗')}</div>
   <p class="sidebar-note">Representation learning<br>Machine learning for science</p>
@@ -89,7 +89,7 @@ def page(file, title, body, description):
 
 
 bio = PROFILE['bio'].split(' My research spans', 1)
-home = '''<p class="eyebrow">Machine learning · Biology · Chemistry</p>
+home = '''<p class="eyebrow">MACHINE LEARNING · BIOLOGY · DRUG DISCOVERY</p>
 <h1>Learning representations<br>that remain useful.</h1>
 <div class="intro"><p>''' + escape(bio[0]) + '''</p><p>My research spans''' + escape(bio[1]) + '''</p></div>
 <p class="home-cta">''' + link('research.html', 'Explore my research →') + '''</p>
@@ -110,7 +110,7 @@ home += '''</section><section class="section" aria-labelledby="news"><div class=
 <ul class="news"><li><time>2026</time><span>Two papers with Aarav Gupta on latent prediction and latent-space planning appear in the ''' + link('https://caisc2026.github.io/accepted_papers.html', 'CAISc accepted-paper list') + '''.</span></li>
 <li><time>2026</time><span>Work with Atharva Airen examines representation drift, test-time feature alignment, gradient reuse, and retrieval compatibility. ''' + link('publications.html', 'Publication records →') + '''</span></li>
 <li><time>2025</time><span>''' + link('https://arxiv.org/abs/2509.00684', 'VECTOR+') + ''' introduces property-guided contrastive learning and latent-space sampling for molecular design.</span></li></ul></section>'''
-page('index.html', 'Home', home, 'Anirban Pal, PhD researcher at IIT Bombay–Monash. Representation and continual learning, foundation models, world models, and biological and molecular representation learning.')
+page('index.html', 'Home', home, 'Anirban Pal, PhD researcher at IIT Bombay Monash. Machine learning, biology, and drug discovery; representation and continual learning, foundation models, and biological and molecular representation learning.')
 
 research = '''<p class="eyebrow">Research</p><h1>Representations, adaptation,<br>and scientific discovery.</h1>
 <p class="page-lead">I study what learned representations preserve, how they change, and whether that information remains useful for downstream tasks.</p>
@@ -164,13 +164,13 @@ page('code.html', 'Code', code, 'Public code and research resources for VECTOR+ 
 
 contact = '''<p class="eyebrow">Contact</p><h1>Get in touch.</h1>
 <p class="page-lead">For research discussions across representation learning, continual learning, and machine learning for biology and chemistry.</p>
-<p>I’m a PhD researcher at IIT Bombay–Monash, based in Mumbai, India.</p>
+<p>I’m a PhD researcher at IIT Bombay Monash, based in Mumbai, India.</p>
 <dl class="contact-list">'''
 for label, url, text in [('Email', 'mailto:' + PROFILE['email'], PROFILE['email']), ('GitHub', PROFILE['github'], 'alphago1234'),
                           ('OpenReview', PROFILE['openreview'], 'Anirban Pal'), ('ResearchGate', PROFILE['researchgate'], 'Anirban Pal'), ('LinkedIn', PROFILE['linkedin'], 'Anirban Pal')]:
     contact += f'<div class="contact-row"><dt>{label}</dt><dd>{link(url, text)}</dd></div>'
 contact += '</dl>'
-page('contact.html', 'Contact', contact, 'Contact Anirban Pal, PhD researcher at IIT Bombay–Monash, for research discussions in machine learning, biology, drug discovery, and catalysis.')
+page('contact.html', 'Contact', contact, 'Contact Anirban Pal, PhD researcher at IIT Bombay Monash, for research discussions in machine learning, biology, drug discovery, and catalysis.')
 
 # Only known metadata is included. No DOI, acceptance, or paper-specific URL is invented.
 bib = []
